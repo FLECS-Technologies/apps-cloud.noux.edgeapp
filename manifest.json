@@ -27,6 +27,6 @@
     "ports": [
         "1337:1337"
     ],
-    "volumes": ["nouxcloud:/app/data"],
+    "volumes": ["nouxcloud-app-data:/app/data"],
     "labels": []
 }
