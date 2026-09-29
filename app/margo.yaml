@@ -47,13 +47,11 @@ parameters:
         components:
           - default
   NC_SERIAL:
-    value: "value"
     targets:
       - pointer: NC_SERIAL
         components:
           - default
   NC_HARDWARE:
-    value: "value"
     targets:
       - pointer: NC_HARDWARE
         components:
