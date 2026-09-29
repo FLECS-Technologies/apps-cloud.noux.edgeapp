@@ -4,8 +4,8 @@ services:
     devices:
       - /dev/net/tun
     environment:
-      NC_SERIAL: ${NC_SERIAL:-value}
-      NC_HARDWARE: ${NC_HARDWARE:-value}
+      NC_SERIAL: ${NC_SERIAL:?<error message>}
+      NC_HARDWARE: ${NC_HARDWARE:?<error message>}
     ports:
       - "${WEB_UI:-1337}:1337"
     volumes:
