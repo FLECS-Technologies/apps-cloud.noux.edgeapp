@@ -1,5 +1,5 @@
 services:
-  app:
+  nc-edge:
     image: read.dev.registry.noux.cloud/nc_edge:2.3.7
     devices:
       - /dev/net/tun
