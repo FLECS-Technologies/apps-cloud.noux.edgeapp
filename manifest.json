@@ -15,7 +15,7 @@
         }
     ],
     "args": [],
-    "capabilities": [],
+    "capabilities": ["NET_ADMIN"],
     "conffiles": [],
     "devices": [
         "/dev/net/tun"

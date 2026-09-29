@@ -1,6 +1,8 @@
 services:
   nc-edge:
-    image: read.dev.registry.noux.cloud/nc_edge:2.3.7
+    image: read.dev.registry.noux.cloud/nc_edge:2.4.1
+    cap_add:
+      - NET_ADMIN
     devices:
       - /dev/net/tun
     environment:
