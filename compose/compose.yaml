@@ -1,0 +1,15 @@
+services:
+  app:
+    image: read.dev.registry.noux.cloud/nc_edge:2.3.7
+    devices:
+      - /dev/net/tun
+    environment:
+      NC_SERIAL: ${NC_SERIAL:-value}
+      NC_HARDWARE: ${NC_HARDWARE:-value}
+    ports:
+      - "${WEB_UI:-1337}:1337"
+    volumes:
+      - nouxcloud-app-data:/app/data
+
+volumes:
+  nouxcloud-app-data:
