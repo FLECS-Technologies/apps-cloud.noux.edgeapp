@@ -1,0 +1,60 @@
+apiVersion: margo/v1alpha1
+kind: ApplicationDescription
+id: cloud-noux-edgeapp
+metadata:
+  name: Noux Node Edge App
+  version: "0.0.0" # overwritten by `bart`, this is just a placeholder
+  description: >-
+    Noux Node offers a cloud-native platform for industrial edge computing, enabling
+    companies to analyze, protect, and utilize data directly at the machine. It provides
+    vendor-independent edge apps, automated rollouts and remote updates for software and
+    security patches, detection and mitigation of CVEs in OT devices like PLCs and robots
+    (CRA- and NIS2-compliant), real-time data analysis at the edge, transparent SBOMs and
+    version-controlled updates with rollback points.
+  catalog:
+    organization:
+      - name: Noux Node Oy
+        site: https://noux.cloud
+    application:
+      tagline: Secure patch management, automated updates, and edge intelligence for industrial OT.
+      icon: icon.png
+      releaseNotes: release-notes.md
+      site: https://flecs.tech/marketplace/product/noux-node-edge-app/
+      tags:
+        - system-utilities
+        - patch-management
+        - cve
+        - sbom
+deploymentProfiles:
+  - type: compose
+    id: default
+    components:
+      - name: default
+        properties:
+          repository: oci://flecs.azurecr.io/cloud.noux.edgeapp # overwritten by `bart`, this is just a placeholder
+          revision: "0.0.0" # overwritten by `bart`, this is just a placeholder
+    requiredResources:
+      cpu:
+        cores: 1
+        architectures:
+          - amd64
+          - arm64
+parameters:
+  WEB_UI:
+    value: "1337"
+    targets:
+      - pointer: WEB_UI
+        components:
+          - default
+  NC_SERIAL:
+    value: "value"
+    targets:
+      - pointer: NC_SERIAL
+        components:
+          - default
+  NC_HARDWARE:
+    value: "value"
+    targets:
+      - pointer: NC_HARDWARE
+        components:
+          - default
